@@ -1,0 +1,11 @@
+headsUpMessage "First, select Source, THEN the Target...";
+
+string $selObj[] = `ls -sl`;
+
+string $ptCsObj[] = `parentConstraint $selObj[1] $selObj[0]`;
+
+string $findPtCns[] = `listRelatives -type parentConstraint $selObj[0]`;
+
+select $findPtCns; doDelete;
+
+select $selObj[1];

@@ -1,0 +1,3 @@
+//Connects the Translation of the First selection to the Second selection...
+string $sel[] = `ls -sl`;
+connectAttr -f ($sel[0] + ".translate") ($sel[1] + ".translate");

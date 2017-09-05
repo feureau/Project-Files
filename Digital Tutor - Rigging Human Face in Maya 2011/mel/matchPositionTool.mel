@@ -1,0 +1,13 @@
+//Match Position Tool
+
+headsUpMessage "Select Source, then Target...";
+
+string $selObj[] = `ls -sl`;
+
+string $ptCsObj[] = `pointConstraint -offset 0 0 0 -weight 1 $selObj[1] $selObj[0]`;
+
+string $findPtCns[] = `listRelatives -type pointConstraint $selObj[0]`;
+
+select $findPtCns; doDelete;
+
+select $selObj[0];

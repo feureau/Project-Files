@@ -1,0 +1,12 @@
+// Simple Group Renamer
+
+//First, select the Group, then object the Group will be renamed to.
+
+string $sel[] = `ls -sl`;
+
+if (`size $sel` != 2){
+        warning -sl 0 "Reminder: First, select the Group, then object the Group will be renamed to.";}
+else if (`size $sel` == 2){
+
+rename $sel[0] ("grp_" + $sel[1]);
+}

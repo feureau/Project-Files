@@ -1,0 +1,36 @@
+BrowUp 		__L and __R
+BrowDown 	__L and __R
+BrowIn 		__L and __R
+BrowOut 	__L and __R
+Scowl 		__L and __R
+Puzzled 	__L and __R
+LipsWide 	__L and __R
+Smile		__L and __R
+Frown		__L and __R
+Sneer		__L and __RCheekPuff	__L and __R
+CheekDraw	__L and __REarUp		__L and __REarDown		__L and __R (using negative values)
+
+LipsUp
+LipsDn
+LipsLeft
+LipsRightLipsPursed
+
+TopLipUp
+LowLipDn
+TopLipDn
+LowLipUp
+LowLipPooch
+
+In Maya
+FFFF
+VVVV
+JawOpenLipsClosed
+LipsTwist	__L and __R
+
+Tongue
+TH
+LLL
+
+Pupils
+Contract	__L and __R
+Dilate		__L and __R

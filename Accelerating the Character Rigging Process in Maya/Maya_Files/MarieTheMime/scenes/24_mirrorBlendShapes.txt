@@ -1,0 +1,39 @@
+//this is a small mirror blend shape script
+//Usage: Select the blend shape and the target object.
+//IMPORTANT! Make sure the target object has no deformations active!
+
+//cast selection into an array
+string $sel[]= `ls -sl`;
+
+//separate $sel into base and blendtarg
+string $base = $sel[1];
+string $blendtarg = $sel[0];
+
+//duplicate base
+select -r $base;
+string $finl[] = `duplicate`;
+
+//duplicate base to make wrap
+select -r $base;
+string $wrp[] = `duplicate`;
+
+//apply blendtarg to $wrap
+$blendNm = `blendShape -n Tempbln $blendtarg $wrp[0]`;
+
+//scale wrap to -1 in x
+setAttr ($wrp[0] + ".scaleX") -1;
+
+//apply wrap deformer to $duptarg using the Wrap object.
+select -r $finl[0];
+select -add $wrp[0];
+string $wrapdf[] = `doWrapArgList "2" { "1","0.001","1" }`;
+
+//activate blendshape
+setAttr ("Tempbln." + $blendtarg) 1 ;
+
+//clean up
+
+delete -ch $finl[0];
+delete $blendNm;
+delete ($wrp[0] + "Base");
+delete $wrp[0];

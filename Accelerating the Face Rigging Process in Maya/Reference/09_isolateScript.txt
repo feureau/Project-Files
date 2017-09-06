@@ -1,0 +1,15 @@
+//gets the current panel you are looking through
+$Pan = `getPanel -withFocus`;
+
+//queries the current isolation state of the panel
+$vis = `isolateSelect -q -state $Pan`;
+
+//if nothing is isolated, sets it to isolate selected and vice versa. Note: if nothing is selected, everything is hidden
+if ($vis == "0")
+	{
+   	enableIsolateSelect $Pan 1; 
+	}
+else
+	{
+   	enableIsolateSelect $Pan 0;
+	}
